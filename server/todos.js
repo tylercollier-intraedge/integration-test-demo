@@ -1,8 +1,10 @@
+const Todo = require('./models/Todo')
+
 module.exports = {
-  create(db, todo) {
-    return db.connections[0].collection('todos').insert({
-      ...todo,
-      date: Date.now(),
-    })
+  create(todo) {
+    const newTodo = new Todo()
+    newTodo.text = todo.text
+    newTodo.date = Date.now()
+    return newTodo.save()
   }
 }
