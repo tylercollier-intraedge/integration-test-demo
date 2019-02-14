@@ -4,8 +4,10 @@
   "private": true,
   "main": "server/index.js",
   "dependencies": {
+    "chai": "^4.2.0",
     "dotenv": "^6.2.0",
     "express": "^4.16.4",
+    "mocha": "^5.2.0",
     "mongoose": "^5.4.12",
     "react": "^16.8.1",
     "react-dom": "^16.8.1",
@@ -14,7 +16,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "nodemon --exec 'mocha \"server/**/*.test.js\"'",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
